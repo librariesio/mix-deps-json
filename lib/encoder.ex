@@ -5,7 +5,7 @@ defmodule Encoder do
     |> Poison.encode!
   end
 
-  def libraries(dependencies) do
+  defp libraries(dependencies) do
     dependencies |> Enum.reduce(%{}, &library/2)
   end
 
@@ -14,6 +14,9 @@ defmodule Encoder do
   end
   defp library({name, details}, acc) do
     acc = Dict.put(acc, name, extract_version(details))
+  end
+  defp library({_, _, [name, version, _]}, acc) do
+    acc = Dict.put(acc, name, version)
   end
 
   defp extract_version(details) do

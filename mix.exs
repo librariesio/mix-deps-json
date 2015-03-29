@@ -5,8 +5,7 @@ defmodule Mixup.Mixfile do
     [app: :mixup,
      version: "0.0.1",
      elixir: "~> 1.0",
-     deps: deps,
-     default_task: "server"]
+     deps: deps]
   end
 
   # Configuration for the OTP application
