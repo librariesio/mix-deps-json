@@ -1,4 +1,4 @@
-## mix-deps-json
+# mix-deps-json
 
 This is a minimal elixir proxy that accepts a mix.exs file as a POST body, and spits out the project dependencies as JSON for [Libraries.io](https://libraries.io).
 
