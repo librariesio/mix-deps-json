@@ -9,7 +9,7 @@ defmodule Servelet do
 
     try do
       json = data
-      |> Code.string_to_quoted
+      |> Lockfile.parse
       |> Encoder.to_json
       send_resp(conn, 200, json)
     rescue error
@@ -23,7 +23,7 @@ defmodule Servelet do
 
     try do
       json = data
-      |> Parser.interpret
+      |> Mixfile.parse
       |> Encoder.to_json
       send_resp(conn, 200, json)
     rescue error
