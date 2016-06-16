@@ -32,4 +32,13 @@ defmodule MixupTest do
 
     assert json == "{\"cowboy\":{\"version\":\"1.0.0\",\"source\":\"hex\"}}"
   end
+
+  test "encoder can encode new lockfiles" do
+    {:ok, lockfile} = File.read("./test/fixtures/newlockfile")
+    result = Lockfile.parse(lockfile)
+
+    json = Encoder.lockfile_json(result)
+
+    assert json == "{\"ranch\":{\"version\":\"1.2.1\",\"source\":\"hex\"},\"poison\":{\"version\":\"2.1.0\",\"source\":\"hex\"},\"plug\":{\"version\":\"1.1.6\",\"source\":\"hex\"},\"cowlib\":{\"version\":\"1.0.2\",\"source\":\"hex\"},\"cowboy\":{\"version\":\"1.0.4\",\"source\":\"hex\"}}"
+  end
 end
