@@ -7,6 +7,13 @@ defmodule Lockfile do
 
   defp extract_deps({:ok, {_, _, deps}}), do: extract_deps(deps)
   defp extract_deps(deps) do
-    Enum.map(deps, fn({_, {_, _, [source, lib, version]}}) -> {source, lib, version} end)
+    Enum.map(deps, &extract_dep/1)
+  end
+
+  defp extract_dep({_, {_, _, [source, lib, version, _, _, _]}}) do
+    {source, lib, version}
+  end
+  defp extract_dep({_, {_, _, [source, lib, version]}}) do
+    {source, lib, version}
   end
 end
