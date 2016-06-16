@@ -9,8 +9,8 @@ defmodule Servelet do
 
     try do
       json = data
-      |> Code.string_to_quoted
-      |> Encoder.to_json
+      |> Lockfile.parse
+      |> Encoder.lockfile_json
       send_resp(conn, 200, json)
     rescue error
       -> send_resp(conn, 422, ":(")
