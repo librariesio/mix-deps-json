@@ -1,5 +1,5 @@
 defmodule Encoder do
-  def to_json(dependencies) do
+  def mixfile_json(dependencies) do
     dependencies
     |> libraries
     |> Poison.encode!

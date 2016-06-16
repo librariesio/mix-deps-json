@@ -23,8 +23,8 @@ defmodule Servelet do
 
     try do
       json = data
-      |> Parser.interpret
-      |> Encoder.to_json
+      |> Mixfile.interpret
+      |> Encoder.mixfile_json
       send_resp(conn, 200, json)
     rescue error
       -> send_resp(conn, 422, ":(")
