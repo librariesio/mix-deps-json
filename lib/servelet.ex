@@ -23,7 +23,7 @@ defmodule Servelet do
 
     try do
       json = data
-      |> Mixfile.interpret
+      |> Mixfile.parse
       |> Encoder.mixfile_json
       send_resp(conn, 200, json)
     rescue error
