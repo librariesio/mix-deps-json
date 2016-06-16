@@ -4,7 +4,7 @@ defmodule Mixup.Mixfile do
   def project do
     [app: :mixup,
      version: "0.0.1",
-     elixir: "~> 1.0",
+     elixir: "~> 1.2.6",
      deps: deps]
   end
 
