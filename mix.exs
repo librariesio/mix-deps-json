@@ -29,8 +29,8 @@ defmodule Mixup.Mixfile do
   #
   # Type `mix help deps` for more examples and options
   defp deps do
-    [{:poison, "~> 1.3.1"},
-      {:plug, "~> 0.11.0"},
-      {:cowboy, "~> 1.0.0"}]
+    [{:poison, "~> 2.1.0"},
+      {:plug, "~> 1.1.6"},
+      {:cowboy, "~> 1.0.4"}]
   end
 end
