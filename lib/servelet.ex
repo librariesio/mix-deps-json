@@ -12,7 +12,7 @@ defmodule Servelet do
       |> Lockfile.parse
       |> Encoder.lockfile_json
       send_resp(conn, 200, json)
-    rescue error
+    rescue _error
       -> send_resp(conn, 422, ":(")
     end
   end
@@ -26,7 +26,7 @@ defmodule Servelet do
       |> Mixfile.parse
       |> Encoder.mixfile_json
       send_resp(conn, 200, json)
-    rescue error
+    rescue _error
       -> send_resp(conn, 422, ":(")
     end
   end
