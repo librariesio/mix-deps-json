@@ -10,13 +10,13 @@ defmodule Encoder do
   end
 
   defp library({name, version}, acc) when is_bitstring(version) do
-    acc = Dict.put(acc, name, version)
+    Dict.put(acc, name, version)
   end
   defp library({name, details}, acc) do
-    acc = Dict.put(acc, name, extract_version(details))
+    Dict.put(acc, name, extract_version(details))
   end
   defp library({_, _, [name, version, _]}, acc) do
-    acc = Dict.put(acc, name, version)
+    Dict.put(acc, name, version)
   end
 
   defp extract_version(details) do
@@ -33,7 +33,7 @@ defmodule Encoder do
   defp deps(deps) do
     deps
     |> Enum.reduce(%{}, fn
-      {source, lib, version}, acc -> acc = Dict.put(acc, lib, %{source: source, version: version})
+      {source, lib, version}, acc -> Dict.put(acc, lib, %{source: source, version: version})
     end)
   end
 end
