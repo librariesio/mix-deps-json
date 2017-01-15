@@ -4,11 +4,11 @@ defmodule Mix.Tasks.Server do
   def run(_) do
     {port, _} = Integer.parse(System.get_env("PORT"))
     {:ok, _} = Plug.Adapters.Cowboy.http Servelet, [], port: port
-    no_halt
+    no_halt()
   end
 
   defp no_halt do
-    unless iex_running?, do: :timer.sleep(:infinity)
+    unless iex_running?(), do: :timer.sleep(:infinity)
   end
 
   defp iex_running? do
