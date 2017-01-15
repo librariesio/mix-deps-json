@@ -5,7 +5,7 @@ defmodule Mixup.Mixfile do
     [app: :mixup,
      version: "0.0.1",
      elixir: "~> 1.3.0",
-     deps: deps,
+     deps: deps(),
      build_embedded: Mix.env == :prod,
      start_permanent: Mix.env == :prod]
   end
