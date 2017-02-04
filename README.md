@@ -1,5 +1,8 @@
 # mix-deps-json
 
+[![Build Status](https://travis-ci.org/librariesio/mix-deps-json.svg?branch=master)](https://travis-ci.org/librariesio/mix-deps-json)
+[![Inline docs](http://inch-ci.org/github/librariesio/mix-deps-json.svg?branch=master)](http://inch-ci.org/github/librariesio/mix-deps-json)
+
 This is a minimal elixir proxy that accepts a mix.exs file as a POST body, and spits out the project dependencies as JSON for [Libraries.io](https://libraries.io).
 
 Processed requests return a status code of 200 and JSON body, failed requests will return 422 and ":(" as the body.
