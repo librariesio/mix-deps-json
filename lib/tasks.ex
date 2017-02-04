@@ -1,9 +1,14 @@
 defmodule Mix.Tasks.Server do
+  @moduledoc """
+    Provides mix task for running server
+  """
+
   use Mix.Task
+  alias Plug.Adapters.Cowboy, as: Cowboy
 
   def run(_) do
     {port, _} = Integer.parse(System.get_env("PORT"))
-    {:ok, _} = Plug.Adapters.Cowboy.http Servelet, [], port: port
+    {:ok, _} = Cowboy.http Servelet, [], port: port
     no_halt()
   end
 

@@ -1,4 +1,8 @@
 defmodule Lockfile do
+  @moduledoc """
+    Provides mix.lock dependency parser
+  """
+
   @spec parse(charlist) :: map
   def parse(content) do
     content

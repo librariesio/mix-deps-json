@@ -1,11 +1,16 @@
 defmodule Servelet do
+  @moduledoc """
+    Provides main routes for server endpoints
+  """
+
   use Plug.Router
+  alias Plug.Conn, as: Conn
 
   plug :match
   plug :dispatch
 
   post "/lock" do
-    {:ok, data, _conn} = Plug.Conn.read_body(conn)
+    {:ok, data, _conn} = Conn.read_body(conn)
 
     try do
       json = data
@@ -17,9 +22,8 @@ defmodule Servelet do
     end
   end
 
-
   post "/" do
-    {:ok, data, _conn} = Plug.Conn.read_body(conn)
+    {:ok, data, _conn} = Conn.read_body(conn)
 
     try do
       json = data

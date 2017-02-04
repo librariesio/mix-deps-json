@@ -1,4 +1,8 @@
 defmodule Encoder do
+  @moduledoc """
+    Provides map to json encoder
+  """
+
   @spec mixfile_json(map) :: charlist
   def mixfile_json(dependencies) do
     dependencies
@@ -35,7 +39,8 @@ defmodule Encoder do
   defp deps(deps) do
     deps
     |> Enum.reduce(%{}, fn
-      {source, lib, version}, acc -> Map.put(acc, lib, %{source: source, version: version})
+      {source, lib, version}, acc -> Map.put(acc, lib, %{source: source,
+                                                         version: version})
     end)
   end
 end

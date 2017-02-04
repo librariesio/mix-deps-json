@@ -1,4 +1,8 @@
 defmodule Mixfile do
+  @moduledoc """
+    Provides mix.exs dependency parser
+  """
+
   @spec parse(charlist) :: map
   def parse(content) do
     content
