@@ -33,6 +33,6 @@ defmodule Mixup.Mixfile do
   defp deps do
     [{:poison, "~> 3.1.0"},
       {:plug, "~> 1.3.0"},
-      {:cowboy, "~> 1.0.4"}]
+      {:cowboy, "~> 1.1.0"}]
   end
 end
