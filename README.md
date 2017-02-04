@@ -2,6 +2,8 @@
 
 [![Build Status](https://travis-ci.org/librariesio/mix-deps-json.svg?branch=master)](https://travis-ci.org/librariesio/mix-deps-json)
 [![Inline docs](http://inch-ci.org/github/librariesio/mix-deps-json.svg?branch=master)](http://inch-ci.org/github/librariesio/mix-deps-json)
+[![license](https://img.shields.io/github/license/librariesio/mix-deps-json.svg)](https://github.com/librariesio/mix-deps-json/blob/master/LICENSE.txt)
+[![Docker Automated build](https://img.shields.io/docker/automated/librariesio/mix-deps-json.svg)](https://hub.docker.com/r/librariesio/mix-deps-json/)
 
 This is a minimal elixir proxy that accepts a mix.exs file as a POST body, and spits out the project dependencies as JSON for [Libraries.io](https://libraries.io).
 
