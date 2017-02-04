@@ -1,4 +1,5 @@
 defmodule Mixfile do
+  @spec parse(charlist) :: map
   def parse(content) do
     content
     |> Code.string_to_quoted

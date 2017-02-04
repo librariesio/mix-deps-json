@@ -1,4 +1,5 @@
 defmodule Encoder do
+  @spec mixfile_json(map) :: charlist
   def mixfile_json(dependencies) do
     dependencies
     |> libraries
@@ -24,6 +25,7 @@ defmodule Encoder do
     Map.get(item, :tag) || Map.get(item, :branch) || "HEAD"
   end
 
+  @spec lockfile_json(map) :: charlist
   def lockfile_json(dependencies) do
     dependencies
     |> deps
