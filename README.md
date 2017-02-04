@@ -7,6 +7,21 @@ This is a minimal elixir proxy that accepts a mix.exs file as a POST body, and s
 
 Processed requests return a status code of 200 and JSON body, failed requests will return 422 and ":(" as the body.
 
+## Docker
+
+You can use Docker to run mix-deps-json
+
+First, install Docker. If you've got run macOS or Windows, Docker for Mac/Windows makes this really easy.
+
+If you have Windows Home Edition, you'll need to download and run Docker Toolbox.
+Then, run:
+
+    docker run -t -e PORT=5000 -p 5000:5000 mix-deps-json
+
+mix-deps-json will be running on http://localhost:5000.
+
+Note: You can add PORT to a .env file instead of supplying them directly on the command-line.
+
 ## Development
 
 Source hosted at [GitHub](http://github.com/librariesio/mix-deps-json).

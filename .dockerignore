@@ -1,0 +1,6 @@
+/deps
+/_build
+ecl_Crash.dump
+.git
+.gitignore
+docs
