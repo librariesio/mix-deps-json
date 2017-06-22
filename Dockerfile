@@ -1,4 +1,4 @@
-FROM elixir:1.4.2
+FROM elixir:1.4.4
 RUN \
     apt-get update \
     && apt-get clean \
