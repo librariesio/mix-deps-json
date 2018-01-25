@@ -2,12 +2,14 @@ defmodule Mixup.Mixfile do
   use Mix.Project
 
   def project do
-    [app: :mixup,
-     version: "0.0.1",
-     elixir: "~> 1.5.3",
-     deps: deps(),
-     build_embedded: Mix.env == :prod,
-     start_permanent: Mix.env == :prod]
+    [
+      app: :mixup,
+      version: "0.0.1",
+      elixir: "~> 1.6.0",
+      deps: deps(),
+      build_embedded: Mix.env() == :prod,
+      start_permanent: Mix.env() == :prod
+    ]
   end
 
   def application do

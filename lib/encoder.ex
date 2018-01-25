@@ -7,7 +7,7 @@ defmodule Encoder do
   def mixfile_json(dependencies) do
     dependencies
     |> libraries
-    |> Poison.encode!
+    |> Poison.encode!()
   end
 
   defp libraries(dependencies) do
@@ -17,9 +17,11 @@ defmodule Encoder do
   defp library({name, version}, acc) when is_bitstring(version) do
     Map.put(acc, name, version)
   end
+
   defp library({name, details}, acc) do
     Map.put(acc, name, extract_version(details))
   end
+
   defp library({_, _, [name, version, _]}, acc) do
     Map.put(acc, name, version)
   end
@@ -33,14 +35,13 @@ defmodule Encoder do
   def lockfile_json(dependencies) do
     dependencies
     |> deps
-    |> Poison.encode!
+    |> Poison.encode!()
   end
 
   defp deps(deps) do
     deps
-    |> Enum.reduce(%{}, fn
-      {source, lib, version}, acc -> Map.put(acc, lib, %{source: source,
-                                                         version: version})
+    |> Enum.reduce(%{}, fn {source, lib, version}, acc ->
+      Map.put(acc, lib, %{source: source, version: version})
     end)
   end
 end

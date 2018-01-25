@@ -8,7 +8,7 @@ defmodule Mix.Tasks.Server do
 
   def run(_) do
     {port, _} = Integer.parse(System.get_env("PORT"))
-    {:ok, _} = Cowboy.http Servelet, [], port: port
+    {:ok, _} = Cowboy.http(Servelet, [], port: port)
     no_halt()
   end
 
@@ -17,6 +17,6 @@ defmodule Mix.Tasks.Server do
   end
 
   defp iex_running? do
-    Code.ensure_loaded?(IEx) && IEx.started?
+    Code.ensure_loaded?(IEx) && IEx.started?()
   end
 end
