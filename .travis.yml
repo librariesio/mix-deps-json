@@ -1,12 +1,15 @@
 language: elixir
 elixir:
-  - 1.6.1
+- 1.6.1
 otp_release:
-  - 20.2
+- 20.2
 cache:
   directories:
-    - _build
-    - deps
+  - _build
+  - deps
 after_script:
-  - MIX_ENV=docs mix deps.get
-  - MIX_ENV=docs mix inch.report
+- MIX_ENV=docs mix deps.get
+- MIX_ENV=docs mix inch.report
+notifications:
+  slack:
+    secure: jBW73qw0p0BY3hbc9h7wPB7UCRreugE9l4nehicepfc4eYUzD3zEnCBKLVQSn5L+wzsOC7bALOtTbf5JgDPcTGGHEadRyZVIl5kR5Fev+rbhqctVCFVlhxPEj9dbPMpno/pP/wBBif+JPKt2kzvMxI4ZcfOKExryWKBCyRJzRMI7PO8PTG/6CJy7KhZw/qIN+p6EZ89JbaN/1RARWcIhtWhGDt70eq2Y42g3vrrsLIdY9y5CX2tA6u7mjamdobv7AuHKtwjYKNQkHx9IRDmbzGU6V0ChwQnsjOA6l39pYGfLsrq0jCjOcp5ZzaSe9wEmT4MChDcTuWNTOAdcTkQbbrjmbjD6dte0Ut28Nj+/Rlqhn452iDvcaA4wSL9hRECdBBCo/yExD5pp8udi+K2wFolR0/lV1niwT194XqVPW3rcVdxkpmgHV3U+Ej+19dgSRI9A+YAOsTAmYA3U88Dav0wZV3E5SfvS3Lp1mLY6NepHTBGh+02H7TPdrB35uPC4+0D1etJTkLxlp724jlczAo7zUgdShJDsiHetHUqOKZAwRH4j+WeYUzXVvRRw2GEFhj3mry1FF6M0YINfPTx4QxrxYDIMwU+HBdsETdAmVh3b4bbEQWDtjDSQL1uvKabgVQB9mXytLkr/9ormroiBxVOZIxjoXVQA1zijkrx0LuM=
