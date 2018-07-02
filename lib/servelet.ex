@@ -9,6 +9,11 @@ defmodule Servelet do
   plug(:match)
   plug(:dispatch)
 
+  get "/" do
+    {:ok, data, _conn} = Conn.read_body(conn)
+    send_resp(conn, 200, "OK")
+  end
+
   post "/lock" do
     {:ok, data, _conn} = Conn.read_body(conn)
 
