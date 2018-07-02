@@ -4,7 +4,7 @@ defmodule Mix.Tasks.Server do
   """
 
   use Mix.Task
-  alias Plug.Adapters.Cowboy, as: Cowboy
+  alias Plug.Adapters.Cowboy2, as: Cowboy
 
   def run(_) do
     {port, _} = Integer.parse(System.get_env("PORT"))
