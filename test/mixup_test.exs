@@ -42,4 +42,10 @@ defmodule MixupTest do
     assert json ==
              "{\"ranch\":{\"version\":\"1.2.1\",\"source\":\"hex\"},\"poison\":{\"version\":\"2.1.0\",\"source\":\"hex\"},\"plug\":{\"version\":\"1.1.6\",\"source\":\"hex\"},\"cowlib\":{\"version\":\"1.0.2\",\"source\":\"hex\"},\"cowboy\":{\"version\":\"1.0.4\",\"source\":\"hex\"}}"
   end
+
+  test "lockfile can parse newest lockfiles" do
+    {:ok, lockfile} = File.read("./test/fixtures/newerlockfile")
+    result = Lockfile.parse(lockfile)
+    assert Enum.at(result, 0) == {:hex, :amqp, "1.0.2"}
+  end
 end

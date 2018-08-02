@@ -23,4 +23,8 @@ defmodule Lockfile do
   defp extract_dep({_, {_, _, [source, lib, version]}}) do
     {source, lib, version}
   end
+
+  defp extract_dep({_, {_, _, [source, lib, version, _, _, _, _]}}) do
+    {source, lib, version}
+  end
 end
