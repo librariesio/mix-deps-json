@@ -22,7 +22,7 @@ defmodule Mixup.Mixfile do
       {:plug, "~> 1.6.0"},
       {:cowboy, "~> 2.4.0"},
       {:credo, "~> 0.5", only: [:dev, :test]},
-      {:inch_ex, "~> 0.5", only: :docs}
+      {:inch_ex, "~> 1.0", only: :docs}
     ]
   end
 end
