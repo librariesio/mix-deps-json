@@ -12,7 +12,7 @@ defmodule MixupTest do
     {:ok, mixfile} = File.read("./test/fixtures/mixfile")
     result = Mixfile.parse(mixfile)
 
-    assert result == [poison: "~> 1.3.1", plug: "~> 0.11.0"]
+    assert result == [oauth: [github: "tim/erlang-oauth"], poison: "~> 1.3.1", plug: "~> 0.11.0"]
   end
 
   test "encoder can encode mixfiles" do
@@ -21,7 +21,7 @@ defmodule MixupTest do
 
     json = Encoder.mixfile_json(result)
 
-    assert json == "{\"poison\":\"~> 1.3.1\",\"plug\":\"~> 0.11.0\"}"
+    assert json == "{\"poison\":\"~> 1.3.1\",\"plug\":\"~> 0.11.0\",\"oauth\":\"HEAD\"}"
   end
 
   test "encoder can encode lockfiles" do
@@ -40,7 +40,7 @@ defmodule MixupTest do
     json = Encoder.lockfile_json(result)
 
     assert json ==
-             "{\"ranch\":{\"version\":\"1.2.1\",\"source\":\"hex\"},\"poison\":{\"version\":\"2.1.0\",\"source\":\"hex\"},\"plug\":{\"version\":\"1.1.6\",\"source\":\"hex\"},\"cowlib\":{\"version\":\"1.0.2\",\"source\":\"hex\"},\"cowboy\":{\"version\":\"1.0.4\",\"source\":\"hex\"}}"
+             "{\"https://github.com/tim/erlang-oauth.git\":{\"version\":\"bd19896e31125f99ff45bb5850b1c0e74b996743\",\"source\":\"git\"},\"ranch\":{\"version\":\"1.2.1\",\"source\":\"hex\"},\"poison\":{\"version\":\"2.1.0\",\"source\":\"hex\"},\"plug\":{\"version\":\"1.1.6\",\"source\":\"hex\"},\"cowlib\":{\"version\":\"1.0.2\",\"source\":\"hex\"},\"cowboy\":{\"version\":\"1.0.4\",\"source\":\"hex\"}}"
   end
 
   test "lockfile can parse newest lockfiles" do
